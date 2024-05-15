@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday Meemaw</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="pepper.jpg" type="image/x-icon">
+</head>
+<body>
+    <h1>One last question before we're done...</h1>
+    <p id="favourite">Who is your favourite child?</p>
+    <button id="Rachel" onclick="selectOption('Rachel')">Rachel</button>
+    <button id="Kaitlyn" onclick="selectOption('Kaitlyn')">Kaitlyn</button>
+    <button id="Pepper" onclick="selectOption('Pepper')">Pepper</button>
+    <p id="selection">Please select an option.</p>
+
+   <script>
+        function selectOption(child) {
+            var messageElement = document.getElementById('selection');
+            
+            if (child != 'Rachel') {
+                messageElement.textContent = child + ' is incorrect. Please try again.';
+            } else {
+                messageElement.textContent = child + ' is correct! Good job :)';
+            } 
+        }    
+   </script>
+</body>
+</html>
