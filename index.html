@@ -19,28 +19,25 @@
             </div>
         </div>
     
-        <a href="C:\Users\hysan\Downloads\meemaws_birthday\birthday.html">
-            <button id ="startButton">Click me!</button>
-          </a>
-          
-        <!-- <button id ="startButton">Click me!</button> -->
+        <button id ="startButton" onmousedown ="initNotification()">Click me!</button>
+
 
         <div id="balloon-container">
         </div>
-
-        <!-- <div class='console-wrapper'>
-            <div class='console-container'>
-                <span id='text'></span>
-                <div class='console-underscore' id='console'>&#95;</div>
-            </div>
-            <button id="startButton">Start</button>
-        </div>
-         -->
         
         <div class='console-container'>
             <span id='text'></span><div class='console-underscore' 
         id='console'>&#95;</div></div>
 
+        <div id="notification" class="hidden">
+            <div class="notification-content">
+                <img src="volume.png" alt="Volume Icon">
+                <h1>Notice</h1>
+                <p>Before we continue, please turn on the volume.</p>
+                <button id="okButton">Ok</button>
+            </div>
+        </div>
+        
         <script>
 
             consoleText(['Happy Birthday Meemaw!'], 'text',['tomato']);
@@ -126,24 +123,42 @@
             }
 
             function removeBalloons() {
-            balloonContainer.style.opacity = 0;
-            setTimeout(() => {
-                balloonContainer.remove()
-            }, 500)
+                balloonContainer.style.opacity = 0;
+                setTimeout(() => {
+                    balloonContainer.remove()
+                }, 500)
             }
 
             window.addEventListener("load", () => {
-            createBalloons(15)
+                createBalloons(15)
             });
 
             window.addEventListener("click", () => {
-            removeBalloons();
+                removeBalloons();
+                startButton.style.opacity = '0';
+                initializeNotification();
             });
 
-            // document.getElementById('startButton').addEventListener('click', function() {
-            //     window.location.href = 'meemaws_birthday/birthday.html';  
-            // });
- 
+            function initializeNotification() {
+                showNotification();
+                document.getElementById('okButton').addEventListener('click', hideNotification);
+            }
+
+
+            function showNotification() {
+                const notification = document.getElementById('notification');
+                notification.style.visibility = 'visible';
+                notification.style.opacity = '1';
+            }
+
+            function hideNotification() {
+                const notification = document.getElementById('notification');
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    notification.style.visibility = 'hidden';
+                    window.location.href = 'birthday.html'
+                }, 5);
+            }
 
         </script>
     </body> 
@@ -152,3 +167,16 @@
 </html>
 
 
+
+
+        <!-- <div class='console-wrapper'>
+            <div class='console-container'>
+                <span id='text'></span>
+                <div class='console-underscore' id='console'>&#95;</div>
+            </div>
+            <button id="startButton">Start</button>
+        </div>
+         -->
+
+
+                 <!-- <button id ="startButton">Click me!</button> -->
