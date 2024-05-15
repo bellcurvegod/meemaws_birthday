@@ -1,22 +1,63 @@
-<!DOCTYPE html> 
-<html>
-    <head>
-        <title> Happy Birthday Meemaw </title>
-        <meta charset = "UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel ="stylesheet" type="text/css" href ="style.css">
-        <link rel="icon" href="pepper.jpg" type="image/pepper2-icon">
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Meemaw</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="pepper.jpg" type="image/png">
+</head>
+<body>
+    <section class="header">
+        <div class="title-wrapper">
+            <h1 class="sweet-title">
+                <span data-text="It's">It's</span>
+                <span data-text="Birthday">Birthday</span>
+                <span data-text="Song Time!">Song Time!</span>
+            </h1>
+        </div>
+    </section>
+    <audio id="audio" src="boom.mp3" type="audio/mp3"></audio>
+    <audio id="song" src="bdaysong.mp4" type="audio/mp4"></audio>
+    <button id="celebration" onclick="startSequence()">Start Celebration!</button>
+    <div class="raccoon-wrapper">
+        <div class="raccoon-container">
+            <img src="raccoon.gif" alt="meemaw2">
+        </div>
+        <div class="raccoon-container">
+            <img src="raccoon.gif" alt="meemaw2">
+        </div>
+    </div>      
+    <script>
+        const elements = [
+            document.querySelector('.top-title'),
+            document.querySelector('.bottom-title')
+        ];
+        const audio = document.getElementById('audio');
+        const song = document.getElementById('song');
 
-    
-    <body>
-        <h1 id="meow">Hellooooooooo</h1>
-        <script>
- 
-        </script>
-    </body> 
+        function startSequence() {
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.display = 'block'; 
+                    playAudio(); 
+                }, 500 * index);
+            });
 
-    
+            setTimeout(() => {
+                playBirthdaySong();  
+            }, 1500);
+        }
+
+        function playAudio() {
+            audio.currentTime = 0; 
+            audio.play();  
+        }
+
+        function playBirthdaySong() {
+            song.currentTime = 0;
+            song.play()
+        }
+    </script>
+</body>
 </html>
-
-

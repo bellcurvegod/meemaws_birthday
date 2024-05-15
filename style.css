@@ -8,7 +8,7 @@
     z-index: 3;  
     pointer-events: none;  
 }
-.image-container, .image2-container {
+.image-container, .image2-container, .raccoon-container, .raccoon2-container {
     margin: 1 auto;  
     width: 250px;
     height: 388px;
@@ -34,10 +34,10 @@
     }
 }
 
-body {
+/* body {
     margin: 0;
 }
-  
+   */
 #balloon-container {
     height: 100vh;
     padding: 1em;
@@ -45,8 +45,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     overflow: visible;  /* This allows balloons to float outside the container bounds */
-    z-index: 10;  /* Ensuring it's higher than the start button and other content */
+    z-index: 2;  /* Ensuring it's higher than the start button and other content */
     transition: opacity 500ms;
+    pointer-events: none;
 }
  
   .balloon {
@@ -54,6 +55,7 @@ body {
     width: 105px;
     border-radius: 75% 75% 70% 70%;
     position: relative;
+    pointer-events: auto;
   }
   
   .balloon:before {
@@ -102,18 +104,21 @@ body {
 }
 
 #startButton {
+    position: fixed; /* Use fixed to position relative to the viewport */
+    left: 50%; /* Center horizontally */
+    bottom: 200px; /* 200px from the bottom */
+    transform: translateX(-50%); /* Shift it back by 50% of its own width to center it perfectly */
     background-color: #008CBA;
-    z-index: 3;  /* Lower than the balloons but can be higher than other page content if needed */
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 24px;
     cursor: pointer;
+    z-index: 10;  
 }
+
 
 button {
     background-color: lightskyblue;  
@@ -122,39 +127,227 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Open Sans', 'Helvetica Neue', sans-serif
+    cursor: pointer;
+    font-family:  'Montserrat', 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Khula:700);
 body {
-  background: #111;
+  font-family: "Exo 2", sans-serif;
+  background: rgb(63, 161, 251);
+  background: linear-gradient(
+    142deg,
+    rgba(63, 161, 251, 1) 0%,
+    rgba(252, 70, 168, 1) 100%
+  );
 }
+
 .hidden {
   opacity:0;
 }
+
+#console {
+    font-family: 'Montserrat';    
+}
 .console-container {
- 
-  font-family:Khula;
-  font-size:4em;
-  text-align:center;
-  height:200px;
-  width:800px;
-  display:block;
-  position:absolute;
-  color:white;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin:auto;
+    font-family: 'Montserrat';    
+    font-size:4em;
+    text-align:center;
+    height:100px;
+    width:800px;
+    display:block;
+    position:absolute;
+    color:white;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
 }
 .console-underscore {
    display:inline-block;
   position:relative;
   top:-0.14em;
   left:10px;
+}
+
+#notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.notification-content {
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.notification-content img {
+    width: 50px;
+}
+
+.notification-content h2 {
+    margin: 10px 0;
+}
+
+.notification-content p {
+    color: #333;
+}
+
+.notification-content button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.notification-content button:hover {
+    background-color: #005f73;
+}
+
+
+#meow {
+    color: white
+}
+
+#celebration {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  margin: auto; /* Centers the button horizontally with automatic margin */
+  padding: 10px 20px; /* Adjust padding as needed */
+  bottom: 150px;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 4rem);
+}
+
+.title-wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  transform: skew(0, -10deg);
+}
+
+.sweet-title {
+  order: 2;
+  color: #fde9ff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 10vw, 6rem);
+  line-height: 1em; /* Adjusted line height for better spacing */
+  text-align: center;
+  text-shadow: 3px 1px 1px #4af7ff, 2px 2px 1px #165bfb, 4px 2px 1px #4af7ff,
+    3px 3px 1px #165bfb, 5px 3px 1px #4af7ff, 4px 4px 1px #165bfb,
+    6px 4px 1px #4af7ff, 5px 5px 1px #165bfb, 7px 5px 1px #4af7ff,
+    6px 6px 1px #165bfb, 8px 6px 1px #4af7ff, 7px 7px 1px #165bfb,
+    9px 7px 1px #4af7ff;
+
+  span {
+      display: block;
+      position: relative;
+
+    &:before {
+      content: attr(data-text);
+      position: absolute;
+      text-shadow: 2px 2px 1px #e94aa1, -1px -1px 1px #c736f9,
+          -2px 2px 1px #e94aa1, 1px -1px 1px #f736f9;
+      z-index: 1;
+    }
+
+    &:nth-child(1) {
+      padding-right: 2.25rem;
+    }
+
+    &:nth-child(2) {
+      padding-left: 2.25rem;
+    }
+  }
+}
+
+body {
+  overflow: hidden; /* Hides the scrollbar but still allows scrolling */
+}
+
+.raccoon-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;  
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 3;  
+  transform: translateY(-50%);
+  pointer-events: none;  
 }
