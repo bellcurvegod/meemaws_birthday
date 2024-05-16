@@ -156,8 +156,11 @@
                 notification.style.opacity = '0';
                 setTimeout(() => {
                     notification.style.visibility = 'hidden';
-                    window.location.href = 'birthday.html'
-                }, 5);
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = 'birthday.html';
+                    }, 500); // Wait for the transition to complete (0.5s)
+                }, 5); // Ensure that the opacity change takes effect before navigating
             }
 
         </script>
@@ -165,18 +168,3 @@
 
     
 </html>
-
-
-
-
-        <!-- <div class='console-wrapper'>
-            <div class='console-container'>
-                <span id='text'></span>
-                <div class='console-underscore' id='console'>&#95;</div>
-            </div>
-            <button id="startButton">Start</button>
-        </div>
-         -->
-
-
-                 <!-- <button id ="startButton">Click me!</button> -->

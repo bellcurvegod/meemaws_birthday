@@ -8,22 +8,37 @@
     <link rel="icon" href="pepper.jpg" type="image/x-icon">
 </head>
 <body>
-    <h1>One last question before we're done...</h1>
+    <h1 id="qn">One last question before we're done...</h1>
     <p id="favourite">Who is your favourite child?</p>
-    <button id="Rachel" onclick="selectOption('Rachel')">Rachel</button>
-    <button id="Kaitlyn" onclick="selectOption('Kaitlyn')">Kaitlyn</button>
-    <button id="Pepper" onclick="selectOption('Pepper')">Pepper</button>
+    <div class="button-container">
+        <button id="Rachel" onclick="selectOption('Rachel')">Rachel</button>
+        <button id="Kaitlyn" onclick="selectOption('Kaitlyn')">Kaitlyn</button>
+        <button id="Pepper" onclick="selectOption('Pepper')">Pepper</button>
+    </div>
+    
+
+    <audio id="correct" src="correct.mp3" type="audio/mp3"></audio>
+    <audio id="wrong" src="wrong.mp3" type="audio/mp3"></audio>
+    
     <p id="selection">Please select an option.</p>
 
    <script>
         function selectOption(child) {
             var messageElement = document.getElementById('selection');
             
-            if (child != 'Rachel') {
-                messageElement.textContent = child + ' is incorrect. Please try again.';
+            if (child == 'Kaitlyn') {
+                wrong.currentTime = 0;
+                wrong.play();
+                messageElement.textContent = child + ' is incorrect. Please try again';
+            } else if (child == 'Pepper') {
+                wrong.currentTime = 0;
+                wrong.play();
+                messageElement.textContent = 'Mother the dog does not count';
             } else {
+                correct.currentTime = 0;
+                correct.play();
                 messageElement.textContent = child + ' is correct! Good job :)';
-            } 
+            }
         }    
    </script>
 </body>

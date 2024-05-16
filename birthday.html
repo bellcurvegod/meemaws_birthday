@@ -19,7 +19,7 @@
     </section>
     <audio id="audio" src="boom.mp3" type="audio/mp3"></audio>
     <audio id="song" src="bdaysong.mp4" type="audio/mp4"></audio>
-    <button id="celebration" onclick="startSequence()">Start Celebration!</button>
+    <button id="celebration" onclick="startSequence()">Click Me!</button>
     <div class="raccoon-wrapper">
         <div class="raccoon-container">
             <img src="raccoon.gif" alt="meemaw2">
@@ -29,29 +29,30 @@
         </div>
     </div>      
     <script>
-        const elements = [
-            document.querySelector('.top-title'),
-            document.querySelector('.bottom-title')
-        ];
-        const audio = document.getElementById('audio');
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.remove('fade-out');
+       
+            const elements = [
+                document.querySelector('.sweet-title'),
+            ];
+            const audio = document.getElementById('audio');
+
+            element.style.display = 'block'; 
+            audio.currentTime = 0; 
+            audio.play(); 
+        });
+
         const song = document.getElementById('song');
 
         function startSequence() {
-            elements.forEach((element, index) => {
-                setTimeout(() => {
-                    element.style.display = 'block'; 
-                    playAudio(); 
-                }, 500 * index);
-            });
-
             setTimeout(() => {
                 playBirthdaySong();  
-            }, 1500);
-        }
+            }, 500);
 
-        function playAudio() {
-            audio.currentTime = 0; 
-            audio.play();  
+            setTimeout(() => {
+                    document.body.classList.add('fade-out');
+                    window.location.href = 'question.html';
+            }, 24000);  
         }
 
         function playBirthdaySong() {
