@@ -1,0 +1,156 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(142deg, rgba(63, 161, 251, 1) 0%, rgba(252, 70, 168, 1) 100%);
+}
+
+.header {
+    max-width: 100%;
+    text-align: center;
+}
+
+.content-container {
+    width: 100%; /* Ensures content is aligned and centered */
+    max-width: 500px; /* Maintains content width */
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+button {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: none;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
+    transition: all .15s ease-in-out;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+#selection {
+    margin-top: 10px;
+}
+
+  @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
+
+  .header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 4rem);
+  }
+  
+  .title-wrapper {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    /* transform: skew(0, -10deg); */
+  }
+  
+  .sweet-title {
+    color: #fde9ff;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(3rem, 8vw, 6rem); /* Adapt font size based on the viewport width */
+    line-height: 1em; /* Adjusted line height for better spacing */
+    text-align: center;
+    text-shadow: 3px 1px 1px #4af7ff, 2px 2px 1px #165bfb, 4px 2px 1px #4af7ff;
+    margin: 0 auto; /* Center the text horizontally */
+    display: block; /* Make the title block to fill entire width */
+  
+    span {
+        display: block;
+        position: relative;
+  
+      &:before {
+        content: attr(data-text);
+        position: absolute;
+        text-shadow: 2px 2px 1px #e94aa1, -1px -1px 1px #c736f9,
+            -2px 2px 1px #e94aa1, 1px -1px 1px #f736f9;
+        z-index: 1;
+      }
+  
+      &:nth-child(1) {
+        padding-right: 2.25rem;
+      }
+  
+      &:nth-child(2) {
+        padding-left: 2.25rem;
+      }
+    }
+  }
+  
+
+#Rachel, #Kaitlyn, #Pepper {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: "JetBrains Mono",monospace;
+    height: 60px;
+    line-height: 1;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    padding: 15px 30px;
+    bottom: 50px;
+    font-size: 20px;
+    width: 150px; 
+    height: 50px; 
+    margin: 0 10px; 
+  }
+
+
+  .button-29:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  }
+  
+  .button-29:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button-29:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  #qn {
+    font-size: 36px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  #favourite, #selection {
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
