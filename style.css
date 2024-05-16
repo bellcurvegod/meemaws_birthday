@@ -244,7 +244,7 @@ body {
   cursor: pointer;
   display: block;
   font-family: "JetBrains Mono",monospace;
-  height: 48px;
+  height: 60px;
   justify-content: center;
   line-height: 1;
   list-style: none;
@@ -260,9 +260,10 @@ body {
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow,transform;
-  margin: auto; /* Centers the button horizontally with automatic margin */
-  padding: 10px 20px; /* Adjust padding as needed */
+  margin: auto; 
+  padding: 15px 30px;
   bottom: 150px;
+  font-size: 24px;
 }
 
 .button-29:focus {
@@ -350,4 +351,65 @@ body {
   z-index: 3;  
   transform: translateY(-50%);
   pointer-events: none;  
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+#favourite, #selection {
+  font-size: 24px;
+}
+
+#favourite, #qn, #selection {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 2;
+}
+
+#favourite {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex; 
+  justify-content: center; 
+}
+
+#startButton, #Rachel, #Kaitlyn, #Pepper {
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: "JetBrains Mono",monospace;
+  height: 60px;
+  line-height: 1;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  padding: 15px 30px;
+  bottom: 150px;
+  font-size: 20px;
+  width: 150px; 
+  height: 50px; 
+  margin: 0 10px; 
 }
